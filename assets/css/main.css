@@ -2202,11 +2202,12 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/Keyboard\ Header.jpg");
+		background-image: url("../../images/particles-7193862_1920.jpg");
 		background-size: cover;
-		background-position: center center;
-		background-attachment: fixed;
+		background-position: bottom 55% center;
+		background-attachment:fixed;
 		color: #fff;
+		
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
@@ -2295,10 +2296,10 @@ input, select, textarea {
 			-webkit-transition: opacity 2.5s ease-in-out;
 			-ms-transition: opacity 2.5s ease-in-out;
 			transition: opacity 2.5s ease-in-out;
-			-moz-transition-delay: 0.5s;
-			-webkit-transition-delay: 0.5s;
-			-ms-transition-delay: 0.5s;
-			transition-delay: 0.5s;
+			-moz-transition-delay: 0.2s;
+			-webkit-transition-delay: 0.2s;
+			-ms-transition-delay: 0.2s;
+			transition-delay: 0.2s;
 		}
 
 	body.homepage.is-preload #header:after {
