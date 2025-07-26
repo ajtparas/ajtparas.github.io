@@ -7,6 +7,317 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Featured Projects Section Styles */
+			.featured-projects {
+				background: #fff;
+				padding: 3em 0 4em 0;
+			}
+
+			.featured-projects h3 {
+				text-align: center;
+				font-size: 1.8em;
+				color: #483949;
+				margin-bottom: 2.5em;
+				font-weight: 400;
+			}
+
+			.featured-grid {
+				display: flex;
+				gap: 2em;
+				justify-content: center;
+				flex-wrap: wrap;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2em;
+			}
+
+			.featured-item {
+				flex: 1;
+				min-width: 300px;
+				max-width: 380px;
+				background: #fff;
+				border-radius: 0.5em;
+				overflow: hidden;
+				box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				position: relative;
+			}
+
+			.featured-item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
+			}
+
+			.featured-item.highlight {
+				border: 3px solid #ef8376;
+				position: relative;
+			}
+
+			.featured-item.highlight::before {
+				content: "★ FEATURED";
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				background: #ef8376;
+				color: white;
+				padding: 0.3em 0.8em;
+				border-radius: 20px;
+				font-size: 0.7em;
+				font-weight: 600;
+				z-index: 10;
+			}
+
+			.featured-image {
+				position: relative;
+				height: 220px;
+				overflow: hidden;
+			}
+
+			.featured-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.3s ease;
+			}
+
+			.featured-item:hover .featured-image img {
+				transform: scale(1.05);
+			}
+
+			.featured-content {
+				padding: 1.5em;
+			}
+
+			.featured-content h4 {
+				margin: 0 0 0.8em 0;
+				font-size: 1.2em;
+				color: #483949;
+				font-weight: 600;
+			}
+
+			.featured-content p {
+				margin: 0 0 1.2em 0;
+				font-size: 0.9em;
+				line-height: 1.6em;
+				color: #666;
+			}
+
+			.featured-link {
+				display: inline-flex;
+				align-items: center;
+				color: #ef8376;
+				text-decoration: none;
+				font-weight: 400;
+				font-size: 0.9em;
+				transition: color 0.3s ease;
+			}
+
+			.featured-link:hover {
+				color: #df7366;
+			}
+
+			.featured-link::after {
+				content: "→";
+				margin-left: 0.5em;
+				transition: transform 0.3s ease;
+			}
+
+			.featured-link:hover::after {
+				transform: translateX(3px);
+			}
+
+			.more-projects-header {
+				text-align: center;
+				margin: 2em 0 1em 0;
+			}
+
+			.more-projects-header h3 {
+				font-size: 1.8em;
+				color: #483949;
+				margin-bottom: 0.5em;
+				font-weight: 400;
+			}
+
+			.more-projects-header p {
+				color: #666;
+				font-size: 1.1em;
+				margin-bottom: 1em;
+			}
+
+			/* Responsive design */
+			@media screen and (max-width: 840px) {
+				.featured-grid {
+					flex-direction: column;
+					align-items: center;
+					gap: 1.5em;
+					padding: 0 1em;
+				}
+
+				.featured-item {
+					max-width: 100%;
+					min-width: 280px;
+				}
+
+				.featured-projects {
+					padding: 2em 0 3em 0;
+				}
+			}
+
+			@media screen and (max-width: 480px) {
+				.featured-item {
+					min-width: 260px;
+				}
+
+				.featured-content {
+					padding: 1.2em;
+				}
+			}
+
+			/* Modal Styles */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 10000;
+				padding-top: 60px;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0,0,0,0.5);
+			}
+
+			.modal-content {
+				background-color: #fff;
+				margin: auto;
+				padding: 0;
+				border-radius: 0.5em;
+				width: 90%;
+				max-width: 600px;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+				animation: modalSlideIn 0.3s ease-out;
+			}
+
+			@keyframes modalSlideIn {
+				from {
+					opacity: 0;
+					transform: translateY(-50px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.modal-header {
+				padding: 1.5em 2em 1em 2em;
+				border-bottom: 1px solid #e5e5e5;
+				position: relative;
+			}
+
+			.modal-header h2 {
+				margin: 0;
+				color: #483949;
+				font-size: 1.8em;
+			}
+
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 2em;
+				font-weight: bold;
+				position: absolute;
+				right: 1em;
+				top: 0.5em;
+				cursor: pointer;
+				transition: color 0.3s ease;
+			}
+
+			.close:hover,
+			.close:focus {
+				color: #ef8376;
+				text-decoration: none;
+			}
+
+			.modal-body {
+				padding: 2em;
+			}
+
+			.form-group {
+				margin-bottom: 1.5em;
+			}
+
+			.form-group label {
+				display: block;
+				margin-bottom: 0.5em;
+				font-weight: 400;
+				color: #483949;
+			}
+
+			.form-group input[type="text"],
+			.form-group input[type="email"],
+			.form-group select,
+			.form-group textarea {
+				width: 100%;
+				padding: 0.8em;
+				border: 1px solid #e5e5e5;
+				border-radius: 0.3em;
+				font-size: 14px;
+				font-family: 'Source Sans Pro', sans-serif;
+				transition: border-color 0.3s ease, box-shadow 0.3s ease;
+				box-sizing: border-box;
+			}
+
+			.form-group input[type="text"]:focus,
+			.form-group input[type="email"]:focus,
+			.form-group select:focus,
+			.form-group textarea:focus {
+				outline: none;
+				border-color: #ef8376;
+				box-shadow: 0 0 0 2px rgba(239, 131, 118, 0.2);
+			}
+
+			.form-group textarea {
+				resize: vertical;
+				min-height: 100px;
+			}
+
+			.form-actions {
+				display: flex;
+				gap: 1em;
+				justify-content: flex-end;
+				margin-top: 2em;
+				padding-top: 1.5em;
+				border-top: 1px solid #e5e5e5;
+			}
+
+			.form-actions .button {
+				margin: 0;
+				padding: 0.65em 2em;
+			}
+
+			@media screen and (max-width: 600px) {
+				.modal-content {
+					width: 95%;
+					margin-top: 20px;
+				}
+
+				.modal-header,
+				.modal-body {
+					padding: 1.5em;
+				}
+
+				.form-actions {
+					flex-direction: column;
+				}
+
+				.form-actions .button {
+					width: 100%;
+					text-align: center;
+				}
+			}
+		</style>
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -57,32 +368,58 @@
 					</header>
 				</section>
 
+			<!-- Featured Projects -->
+			<section class="featured-projects">
+				<div class="container">
+					<div class="featured-grid">
+						<!-- QA Automation App - Highlighted -->
+						<div class="featured-item highlight">
+							<div class="featured-image">
+								<img src="images/qa automation.jpg" alt="Sports QA Automation Application" />
+							</div>
+							<div class="featured-content">
+								<h4>Sports QA Automation Application</h4>
+								<p>End-to-end automation solution that streamlined operational workflow by 60%. Built with Python, featuring automated data validation, reporting, and user-friendly interface for quality assurance processes.</p>
+								<a href="https://github.com/ajtparas/qa-automation" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
+							</div>
+						</div>
+
+						<!-- Monte Carlo Simulation -->
+						<div class="featured-item">
+							<div class="featured-image">
+								<img src="images/roulette.jpg" alt="Simulating Optimal Roulette Strategies" />
+							</div>
+							<div class="featured-content">
+								<h4>Monte Carlo Roulette Strategy Simulation</h4>
+								<p>Statistical analysis using Monte Carlo methods to evaluate various roulette betting strategies. Comprehensive simulation with data visualization to determine optimal playing approaches.</p>
+								<a href="https://github.com/ajtparas/Monte-Carlo-Simulation" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
+							</div>
+						</div>
+
+						<!-- Milwaukee Property System -->
+						<div class="featured-item">
+							<div class="featured-image">
+								<img src="images/housing.jpg" alt="Milwaukee Property Recommendation System" />
+							</div>
+							<div class="featured-content">
+								<h4>Milwaukee Property Recommendation System</h4>
+								<p>Machine learning-powered recommendation engine for real estate investment decisions. Combines market analysis, property valuation, and predictive modeling for data-driven property selection.</p>
+								<a href="https://github.com/ajtparas/milwaukee_consulting/tree/main" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- More Projects Header -->
+			<div class="more-projects-header">
+				<h3>More Projects</h3>
+			</div>
 
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
 
-						<article>
-							<a href="https://github.com/ajtparas/Monte-Carlo-Simulation" target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/roulette.jpg" alt="Simulating Optimal Roulette Strategies" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/Monte-Carlo-Simulation" target="_blank" rel="noopener noreferrer">Simulating Optimal Roulette Strategies</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="https://github.com/ajtparas/qa-automation"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/qa automation.jpg" alt="Sports QA Automation Application" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/qa-automation" target="_blank" rel="noopener noreferrer">Sports QA Automation Application</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="https://github.com/ajtparas/milwaukee_consulting/tree/main"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/housing.jpg" alt="Milwaukee Property Recommendation System" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/milwaukee_consulting/tree/main" target="_blank" rel="noopener noreferrer">Milwaukee Property Recommendation System</a></h3>
-							</header>
-						</article>
-						
 						<article>
 							<a href="https://github.com/ajtparas/Sentiment-Analysis-Amazon_Reviews"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/amazon.jpg" alt="Amazon Review NLP Sentiment Analysis" /></a>
 							<header>
@@ -181,9 +518,9 @@
 						</header>
 						<div class="row">
 							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/Consulting.jpg" alt="" /></a>
+								<a href="javascript:openServiceForm('consulting')" class="image featured"><img src="images/Consulting.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#"> End-to-End Data Science Consulting </a></h3>
+									<h3><a href="javascript:openServiceForm('consulting')"> End-to-End Data Science Consulting </a></h3>
 								</header>
 								<p>
 									I will help you navigate your organization's complex problems, streamline operational and technical processess, 
@@ -191,9 +528,9 @@
 								</p>
 							</article>
 							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/automation.jpg" alt="" /></a>
+								<a href="javascript:openServiceForm('automation')" class="image featured"><img src="images/automation.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">Automation & App Development</a></h3>
+									<h3><a href="javascript:openServiceForm('automation')">Automation & App Development</a></h3>
 								</header>
 								<p>
 							 I will design and implement automated workflows, business reporting, 
@@ -201,9 +538,9 @@
 								</p>
 							</article>
 							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/Dashboard.jpg" alt="" /></a>
+								<a href="javascript:openServiceForm('dashboard')" class="image featured"><img src="images/Dashboard.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">Interactive Dashboards</a></h3>
+									<h3><a href="javascript:openServiceForm('dashboard')">Interactive Dashboards</a></h3>
 								</header>
 								<p>
 								I will leverage your raw data for future decisions by creating sleek, interactive dashboards, making insights accessible and 
@@ -258,7 +595,153 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				// Service form functionality
+				function openServiceForm(serviceType) {
+					const modal = document.getElementById('serviceModal');
+					const modalTitle = document.getElementById('modalTitle');
+					const serviceSelect = document.getElementById('serviceType');
+					
+					// Set modal title and pre-select service
+					switch(serviceType) {
+						case 'consulting':
+							modalTitle.textContent = 'Data Science Consulting Inquiry';
+							serviceSelect.value = 'consulting';
+							break;
+						case 'automation':
+							modalTitle.textContent = 'Automation & App Development Inquiry';
+							serviceSelect.value = 'automation';
+							break;
+						case 'dashboard':
+							modalTitle.textContent = 'Interactive Dashboard Inquiry';
+							serviceSelect.value = 'dashboard';
+							break;
+						default:
+							modalTitle.textContent = 'Service Inquiry';
+					}
+					
+					modal.style.display = 'block';
+					document.body.style.overflow = 'hidden'; // Prevent background scrolling
+				}
 
-			
+				function closeServiceForm() {
+					const modal = document.getElementById('serviceModal');
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto'; // Restore scrolling
+					
+					// Reset form
+					document.getElementById('contactForm').reset();
+				}
+
+				function submitForm() {
+					const form = document.getElementById('contactForm');
+					const formData = new FormData(form);
+					
+					// Validate required fields
+					const requiredFields = ['clientName', 'clientEmail', 'serviceType', 'projectDescription'];
+					let isValid = true;
+					
+					requiredFields.forEach(field => {
+						const element = document.getElementById(field);
+						if (!element.value.trim()) {
+							element.style.borderColor = '#ef8376';
+							isValid = false;
+						} else {
+							element.style.borderColor = '#e5e5e5';
+						}
+					});
+					
+					if (!isValid) {
+						alert('Please fill in all required fields.');
+						return false;
+					}
+
+					// Create email content
+					let emailSubject = `Service Inquiry: ${formData.get('serviceType')} - ${formData.get('clientName')}`;
+					let emailBody = `
+					New Service Inquiry from ${formData.get('clientName')}
+
+					Contact Information:
+					Name: ${formData.get('clientName')}
+					Email: ${formData.get('clientEmail')}
+					Company: ${formData.get('company') || 'Not specified'}
+
+					Project Details:
+					Service: ${formData.get('serviceType')}
+					Timeline: ${formData.get('projectTimeline') || 'Not specified'}
+					Budget: ${formData.get('budget') || 'Not specified'}
+
+					Project Description:
+					${formData.get('projectDescription')}
+
+					Additional Notes:
+					${formData.get('additionalNotes') || 'None'}
+
+					---
+					This inquiry was submitted through your portfolio website.
+					`;
+
+					// Create mailto link (fallback method)
+					const mailtoLink = `mailto:ajtparas@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+					
+					// Try to open email client
+					window.location.href = mailtoLink;
+					
+					// Show success message and close modal
+					setTimeout(() => {
+						alert('Thank you for your inquiry! Your email client should open with the message pre-filled. If it doesn\'t open automatically, please copy the information and send it to: aldrichparas@example.com');
+						closeServiceForm();
+					}, 1000);
+					
+					return false; // Prevent form submission
+				}
+
+				// Close modal when clicking outside of it
+				window.onclick = function(event) {
+					const modal = document.getElementById('serviceModal');
+					if (event.target === modal) {
+						closeServiceForm();
+					}
+				}
+
+				// Close modal with Escape key
+				document.addEventListener('keydown', function(event) {
+					if (event.key === 'Escape') {
+						closeServiceForm();
+					}
+				});
+			</script>
+
+	<!-- Service Inquiry Modal -->
+		<div id="serviceModal" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.6);">
+		<div style="background:#fff; margin:5% auto; padding:20px; border-radius:8px; width:90%; max-width:600px; position:relative;">
+			<span onclick="closeServiceForm()" style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+			<h2 id="modalTitle">Service Inquiry</h2>
+			<form id="contactForm" onsubmit="return submitForm()">
+			<label for="clientName">Name*</label>
+			<input type="text" id="clientName" name="clientName" required style="width:100%; margin-bottom:10px;"><br>
+
+			<label for="clientEmail">Email*</label>
+			<input type="email" id="clientEmail" name="clientEmail" required style="width:100%; margin-bottom:10px;"><br>
+
+
+			<label for="serviceType">Service*</label>
+			<select id="serviceType" name="serviceType" required style="width:100%; margin-bottom:10px;">
+				<option value="">Select a service</option>
+				<option value="consulting">Data Science Consulting</option>
+				<option value="automation">Automation & App Development</option>
+				<option value="dashboard">Interactive Dashboards</option>
+			</select><br>
+
+			<label for="Description">Project Description*</label>
+			<textarea id="projectDescription" name="projectDescription" rows="4" required style="width:100%; margin-bottom:10px;"></textarea><br>
+
+			<label for="additionalNotes">Additional Notes</label>
+			<textarea id="additionalNotes" name="additionalNotes" rows="2" style="width:100%; margin-bottom:10px;"></textarea><br>
+
+			<button type="submit" style="padding:10px 20px;">Send Inquiry</button>
+			</form>
+		</div>
+		</div>		
 	</body>
 </html>
