@@ -1,323 +1,14 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 	<head>
-		<title>Aldrich Paras</title>
+		<title>Aldrich Paras | Data Quality &amp; Analytics Engineering</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Portfolio of Aldrich Paras, Data Quality Analyst Team Lead at TxODDS in Chicago. Sports data quality, Snowflake and dbt pipelines, and data science projects." />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/site.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* Featured Projects Section Styles */
-			.featured-projects {
-				background: #fff;
-				padding: 3em 0 4em 0;
-			}
-
-			.featured-projects h3 {
-				text-align: center;
-				font-size: 1.8em;
-				color: #483949;
-				margin-bottom: 2.5em;
-				font-weight: 400;
-			}
-
-			.featured-grid {
-				display: flex;
-				gap: 2em;
-				justify-content: center;
-				flex-wrap: wrap;
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 2em;
-			}
-
-			.featured-item {
-				flex: 1;
-				min-width: 300px;
-				max-width: 380px;
-				background: #fff;
-				border-radius: 0.5em;
-				overflow: hidden;
-				box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				position: relative;
-			}
-
-			.featured-item:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
-			}
-
-			.featured-item.highlight {
-				border: 3px solid #ef8376;
-				position: relative;
-			}
-
-			.featured-item.highlight::before {
-				content: "★ FEATURED";
-				position: absolute;
-				top: 15px;
-				right: 15px;
-				background: #ef8376;
-				color: white;
-				padding: 0.3em 0.8em;
-				border-radius: 20px;
-				font-size: 0.7em;
-				font-weight: 600;
-				z-index: 10;
-			}
-
-			.featured-image {
-				position: relative;
-				height: 220px;
-				overflow: hidden;
-			}
-
-			.featured-image img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transition: transform 0.3s ease;
-			}
-
-			.featured-item:hover .featured-image img {
-				transform: scale(1.05);
-			}
-
-			.featured-content {
-				padding: 1.5em;
-			}
-
-			.featured-content h4 {
-				margin: 0 0 0.8em 0;
-				font-size: 1.2em;
-				color: #483949;
-				font-weight: 600;
-			}
-
-			.featured-content p {
-				margin: 0 0 1.2em 0;
-				font-size: 0.9em;
-				line-height: 1.6em;
-				color: #666;
-			}
-
-			.featured-link {
-				display: inline-flex;
-				align-items: center;
-				color: #ef8376;
-				text-decoration: none;
-				font-weight: 400;
-				font-size: 0.9em;
-				transition: color 0.3s ease;
-			}
-
-			.featured-link:hover {
-				color: #df7366;
-			}
-
-			.featured-link::after {
-				content: "→";
-				margin-left: 0.5em;
-				transition: transform 0.3s ease;
-			}
-
-			.featured-link:hover::after {
-				transform: translateX(3px);
-			}
-
-			.more-projects-header {
-				text-align: center;
-				margin: 2em 0 1em 0;
-			}
-
-			.more-projects-header h3 {
-				font-size: 1.8em;
-				color: #483949;
-				margin-bottom: 0.5em;
-				font-weight: 400;
-			}
-
-			.more-projects-header p {
-				color: #666;
-				font-size: 1.1em;
-				margin-bottom: 1em;
-			}
-
-			/* Responsive design */
-			@media screen and (max-width: 840px) {
-				.featured-grid {
-					flex-direction: column;
-					align-items: center;
-					gap: 1.5em;
-					padding: 0 1em;
-				}
-
-				.featured-item {
-					max-width: 100%;
-					min-width: 280px;
-				}
-
-				.featured-projects {
-					padding: 2em 0 3em 0;
-				}
-			}
-
-			@media screen and (max-width: 480px) {
-				.featured-item {
-					min-width: 260px;
-				}
-
-				.featured-content {
-					padding: 1.2em;
-				}
-			}
-
-			/* Modal Styles */
-			.modal {
-				display: none;
-				position: fixed;
-				z-index: 10000;
-				padding-top: 60px;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				overflow: auto;
-				background-color: rgba(0,0,0,0.5);
-			}
-
-			.modal-content {
-				background-color: #fff;
-				margin: auto;
-				padding: 0;
-				border-radius: 0.5em;
-				width: 90%;
-				max-width: 600px;
-				box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-				animation: modalSlideIn 0.3s ease-out;
-			}
-
-			@keyframes modalSlideIn {
-				from {
-					opacity: 0;
-					transform: translateY(-50px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
-
-			.modal-header {
-				padding: 1.5em 2em 1em 2em;
-				border-bottom: 1px solid #e5e5e5;
-				position: relative;
-			}
-
-			.modal-header h2 {
-				margin: 0;
-				color: #483949;
-				font-size: 1.8em;
-			}
-
-			.close {
-				color: #aaa;
-				float: right;
-				font-size: 2em;
-				font-weight: bold;
-				position: absolute;
-				right: 1em;
-				top: 0.5em;
-				cursor: pointer;
-				transition: color 0.3s ease;
-			}
-
-			.close:hover,
-			.close:focus {
-				color: #ef8376;
-				text-decoration: none;
-			}
-
-			.modal-body {
-				padding: 2em;
-			}
-
-			.form-group {
-				margin-bottom: 1.5em;
-			}
-
-			.form-group label {
-				display: block;
-				margin-bottom: 0.5em;
-				font-weight: 400;
-				color: #483949;
-			}
-
-			.form-group input[type="text"],
-			.form-group input[type="email"],
-			.form-group select,
-			.form-group textarea {
-				width: 100%;
-				padding: 0.8em;
-				border: 1px solid #e5e5e5;
-				border-radius: 0.3em;
-				font-size: 14px;
-				font-family: 'Source Sans Pro', sans-serif;
-				transition: border-color 0.3s ease, box-shadow 0.3s ease;
-				box-sizing: border-box;
-			}
-
-			.form-group input[type="text"]:focus,
-			.form-group input[type="email"]:focus,
-			.form-group select:focus,
-			.form-group textarea:focus {
-				outline: none;
-				border-color: #ef8376;
-				box-shadow: 0 0 0 2px rgba(239, 131, 118, 0.2);
-			}
-
-			.form-group textarea {
-				resize: vertical;
-				min-height: 100px;
-			}
-
-			.form-actions {
-				display: flex;
-				gap: 1em;
-				justify-content: flex-end;
-				margin-top: 2em;
-				padding-top: 1.5em;
-				border-top: 1px solid #e5e5e5;
-			}
-
-			.form-actions .button {
-				margin: 0;
-				padding: 0.65em 2em;
-			}
-
-			@media screen and (max-width: 600px) {
-				.modal-content {
-					width: 95%;
-					margin-top: 20px;
-				}
-
-				.modal-header,
-				.modal-body {
-					padding: 1.5em;
-				}
-
-				.form-actions {
-					flex-direction: column;
-				}
-
-				.form-actions .button {
-					width: 100%;
-					text-align: center;
-				}
-			}
-		</style>
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -328,9 +19,9 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo" >Aldrich Paras</a></h1>
+								<h1><a href="index.html" id="logo">Aldrich Paras</a></h1>
 								<hr />
-								<p>Data Scientist</p>
+								<p>Data quality and analytics engineering for sports data</p>
 							</header>
 							<footer>
 								<a href="#banner" class="button circled scrolly">Start</a>
@@ -340,246 +31,212 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="https://github.com/ajtparas"  target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<li><a href="https://github.com/ajtparas" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								<li><a href="#About">About</a></li>
 								<li><a href="#banner">Portfolio</a></li>
-								<li><a href="#Services">Services</a></li>
 								<li>
 									<a href="#">Extras</a>
 									<ul>
 										<li><a href="images/Paras_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-										<li><a href = "https://forms.gle/1fEVqW7qzcVc1g9p8" target="_blank" rel="noopener noreferrer">Keyboard Form</a></li>
+										<li><a href="https://forms.gle/1fEVqW7qzcVc1g9p8" target="_blank" rel="noopener noreferrer">Keyboard Form</a></li>
 										<li><a href="#footer">Contact Me</a></li>
 									</ul>
 								</li>
-								<li><a href="https://www.linkedin.com/in/aldrich-paras/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-									</ul>
-								</section>
+								<li><a href="https://www.linkedin.com/in/aldrich-paras/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							</ul>
-						 </nav>
+						</nav>
 				</div>
 
 			<!-- Banner -->
 				<section id="banner">
 					<header>
-						<h2>Recent Work </h2>
-						<p>
-						 A collection of data insights brought to life, all available on my Github page.
+						<h2>Selected Works</h2>
 					</header>
 				</section>
 
-			<!-- Featured Projects -->
-			<section class="featured-projects">
-				<div class="container">
-					<div class="featured-grid">
-						<!-- QA Automation App - Highlighted -->
-						<div class="featured-item highlight">
-							<div class="featured-image">
-								<img src="images/qa automation.jpg" alt="Sports QA Automation Application" />
-							</div>
-							<div class="featured-content">
-								<h4>Sports QA Automation Application</h4>
-								<p>End-to-end automation solution that streamlined operational workflow by 60%. Built with Python, featuring automated data validation, reporting, and user-friendly interface for quality assurance processes.</p>
-								<a href="https://github.com/ajtparas/qa-automation" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
-							</div>
+			<!-- Featured projects. Generated from ../PROJECTS.md: edit it, then run python3 tools/render_projects.py -->
+			<section class="work work--featured" aria-labelledby="featured-heading">
+				<h3 id="featured-heading" class="visually-hidden">Featured projects</h3>
+				<div class="project-grid">
+					<!-- projects:featured:start -->
+					<article class="project-card project-card--featured">
+						<div class="project-card__media">
+							<img src="images/qa%20automation.jpg" alt="Aerial view of a football game in progress" width="1000" height="666" loading="lazy">
 						</div>
+						<div class="project-card__body">
+							<p class="project-card__meta">TxODDS · 2024 – Present</p>
+							<h4 class="project-card__title">Scores-DQ: Sports Data Quality Platform</h4>
+							<p class="project-card__role">Sole developer until May 2026, then team lead</p>
+							<p class="project-card__summary">Production platform that validates live sports play-by-play data against ESPN and StatBroadcast. It began as a self-initiated QA tool and is now the data quality product I lead at TxODDS.</p>
+							<ul class="project-card__highlights">
+								<li>Built and deployed to production in 2024, cutting weekly recheck labor from 96 to 12 hours</li>
+								<li>Scaled it to recheck 80% more fixtures season-over-season</li>
+								<li>Delivered ~20 client-driven quality initiatives, cutting score adjustments 63% and player-stat adjustments 64%</li>
+								<li>Re-architected into a FastAPI backend and Shiny frontend on Kubernetes, then led the migration of its computation onto scheduled Snowflake marts</li>
+							</ul>
+							<ul class="project-card__tags" aria-label="Tools and methods">
+								<li>Python</li>
+								<li>FastAPI</li>
+								<li>Shiny</li>
+								<li>Snowflake</li>
+								<li>dbt</li>
+								<li>Airflow</li>
+								<li>Kubernetes</li>
+							</ul>
+							<p class="project-card__note">Employer project · source not public</p>
+						</div>
+					</article>
 
-						<!-- Monte Carlo Simulation -->
-						<div class="featured-item">
-							<div class="featured-image">
-								<img src="images/roulette.jpg" alt="Simulating Optimal Roulette Strategies" />
-							</div>
-							<div class="featured-content">
-								<h4>Monte Carlo Roulette Strategy Simulation</h4>
-								<p>Statistical analysis using Monte Carlo methods to evaluate various roulette betting strategies. Comprehensive simulation with data visualization to determine optimal playing approaches.</p>
-								<a href="https://github.com/ajtparas/Monte-Carlo-Simulation" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
+					<article class="project-card project-card--featured">
+						<div class="project-card__media">
+							<img src="images/housing.jpg" alt="Aerial view of a residential neighborhood" width="1000" height="666" loading="lazy">
+						</div>
+						<div class="project-card__body">
+							<p class="project-card__meta">Loyola University Chicago · Fall 2021</p>
+							<h4 class="project-card__title">Milwaukee Assessor's Office: Property Comparables</h4>
+							<p class="project-card__role">Consulting capstone, team of 3</p>
+							<p class="project-card__summary">Consulting capstone for the City of Milwaukee Assessor's Office. Worked from the Office's dataset of 122,096 residential properties to find comparable properties that help the Office defend appraisal values on appeal.</p>
+							<ul class="project-card__highlights">
+								<li>Built a K-D tree nearest-neighbor search in scikit-learn that retrieves comparable sold properties using 13 property features</li>
+								<li>Ranked price drivers with a gradient boosted model; neighborhood code led (57.6 relative influence), ahead of quality grade (22.0)</li>
+								<li>Cut missing half-bath ratings from 93,935 to 35 by confirming with the client that blanks meant zero half baths</li>
+							</ul>
+							<ul class="project-card__tags" aria-label="Tools and methods">
+								<li>R</li>
+								<li>Python</li>
+								<li>scikit-learn</li>
+								<li>Gradient boosting</li>
+								<li>EDA</li>
+							</ul>
+							<div class="project-card__links">
+								<a class="project-card__link" href="https://github.com/ajtparas/milwaukee_consulting" target="_blank" rel="noopener noreferrer" aria-label="GitHub for Milwaukee Assessor's Office: Property Comparables">GitHub</a>
+								<a class="project-card__link" href="https://docs.google.com/document/d/18O1WtuvRIMa-UQsNSEyEuJmoAj5FVB0gZ8M7IXfxzIE/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Report for Milwaukee Assessor's Office: Property Comparables">Report</a>
 							</div>
 						</div>
-
-						<!-- Milwaukee Property System -->
-						<div class="featured-item">
-							<div class="featured-image">
-								<img src="images/housing.jpg" alt="Milwaukee Property Recommendation System" />
-							</div>
-							<div class="featured-content">
-								<h4>Milwaukee Property Recommendation System</h4>
-								<p>Machine learning-powered recommendation engine for real estate investment decisions. Combines market analysis, property valuation, and predictive modeling for data-driven property selection.</p>
-								<a href="https://github.com/ajtparas/milwaukee_consulting/tree/main" target="_blank" rel="noopener noreferrer" class="featured-link">View Project</a>
-							</div>
-						</div>
-					</div>
+					</article>
+					<!-- projects:featured:end -->
 				</div>
 			</section>
 
-			<!-- More Projects Header -->
-			<div class="more-projects-header">
-				<h3>More Projects</h3>
-			</div>
+			<!-- More projects. Generated from ../PROJECTS.md. -->
+			<section class="work work--more" aria-labelledby="more-heading">
+				<h3 id="more-heading" class="work__heading">More Projects</h3>
+				<div class="project-grid">
+					<!-- projects:standard:start -->
+					<article class="project-card">
+						<div class="project-card__media">
+							<img src="images/roulette.jpg" alt="Close-up of a roulette table layout" width="1000" height="666" loading="lazy">
+						</div>
+						<div class="project-card__body">
+							<p class="project-card__meta">Loyola University Chicago · Dec 2021</p>
+							<h4 class="project-card__title">Roulette Strategy Simulation</h4>
+							<p class="project-card__role">Modeling and simulation capstone, team of 2</p>
+							<p class="project-card__summary">Monte Carlo simulation of roulette in R, comparing earnings distributions for one- and two-ball games under the Martingale and Labouchere betting systems.</p>
+							<ul class="project-card__highlights">
+								<li>Implemented the two-ball variant and both betting systems, Martingale and Labouchere</li>
+							</ul>
+							<ul class="project-card__tags" aria-label="Tools and methods">
+								<li>R</li>
+								<li>Monte Carlo</li>
+								<li>Simulation</li>
+							</ul>
+							<div class="project-card__links">
+								<a class="project-card__link" href="https://github.com/ajtparas/Monte-Carlo-Simulation" target="_blank" rel="noopener noreferrer" aria-label="GitHub for Roulette Strategy Simulation">GitHub</a>
+								<a class="project-card__link" href="https://docs.google.com/document/d/1Sfh9kA1RHU9cLMKc0OIX-ehgiYiWnm8i20QkY3GhmqM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Report for Roulette Strategy Simulation">Report</a>
+							</div>
+						</div>
+					</article>
 
-			<!-- Carousel -->
-				<section class="carousel">
-					<div class="reel">
+					<article class="project-card">
+						<div class="project-card__media">
+							<img src="images/australia%20rain.jpg" alt="Sydney Opera House under heavy clouds" width="1000" height="666" loading="lazy">
+						</div>
+						<div class="project-card__body">
+							<p class="project-card__meta">Loyola University Chicago · Nov 2021</p>
+							<h4 class="project-card__title">Rain in Australia and NYC Airbnb Prices</h4>
+							<p class="project-card__role">Stat 388 course project</p>
+							<p class="project-card__summary">Two supervised-learning problems in R: predicting next-day rain in Australia (classification) and New York City Airbnb prices (regression).</p>
+							<ul class="project-card__highlights">
+								<li>Built exploratory analysis and modeling workflows in R, using gradient boosting and random forest models</li>
+							</ul>
+							<ul class="project-card__tags" aria-label="Tools and methods">
+								<li>R</li>
+								<li>Gradient boosting</li>
+								<li>Random forest</li>
+								<li>Classification</li>
+								<li>Regression</li>
+							</ul>
+							<div class="project-card__links">
+								<a class="project-card__link" href="https://github.com/ajtparas/Stat388_Project" target="_blank" rel="noopener noreferrer" aria-label="GitHub for Rain in Australia and NYC Airbnb Prices">GitHub</a>
+								<a class="project-card__link" href="https://docs.google.com/document/d/1f_MGoLG52Lw59yyBVHym1Sip3nOb--nZGMVni6UhA8k/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Report for Rain in Australia and NYC Airbnb Prices">Report</a>
+							</div>
+						</div>
+					</article>
+					<!-- projects:standard:end -->
+				</div>
+			</section>
 
-						<article>
-							<a href="https://github.com/ajtparas/Sentiment-Analysis-Amazon_Reviews"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/amazon.jpg" alt="Amazon Review NLP Sentiment Analysis" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/Sentiment-Analysis-Amazon_Reviews" target="_blank" rel="noopener noreferrer" >Amazon Review NLP Sentiment Analysis</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="https://github.com/ajtparas/Stat388_Project"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/australia rain.jpg" alt="Australian Rainfall Categorical Prediction Analysis" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/Stat388_Project" target="_blank" rel="noopener noreferrer" >Australian Rainfall Categorical Prediction Analysis</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="" class="image featured" target="_blank" rel="noopener noreferrer" ><img src="images/marathon.jpg" alt="Boston Marathon Hadoop, HBase, Phoenix Exploration" /></a>
-							<header>
-								<h3><a href="" target="_blank" rel="noopener noreferrer">Boston Marathon Hadoop, HBase, Phoenix Exploration</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="https://github.com/ajtparas/COMP353-eCommerce"  target="_blank" rel="noopener noreferrer" class="image featured"><img src="images/shopping.jpg" alt="Sports e-Commerce Database / Web Application" /></a>
-							<header>
-								<h3><a href="https://github.com/ajtparas/COMP353-eCommerce" target="_blank" rel="noopener noreferrer" >Sports e-Commerce Database / Web Application</a></h3>
-							</header>
-						</article>
-
-						<article>
-							<a href="" class="image featured" target="_blank" rel="noopener noreferrer"><img src="images/spotify.jpg" alt="Music's Impact During the Lockdown" /></a>
-							<header>
-								<h3><a href="" target="_blank" rel="noopener noreferrer" >Music's Impact During the Lockdown</a></h3>
-							</header>
-						</article>
-					</div>
-				</section>
-
-					  
-
-			<!-- Main -->
+			<!-- About -->
 				<div class="wrapper style1">
-				<section id="About" class="container special">
-					
+					<section id="About" class="container special">
 						<header>
 							<h2>About Me</h2>
-							</header>
-						<style>
-							.image-text {
-							  display: flex;
-							  align-items:center; /* Vertically centers the content */
-							}
-							.image-text img {
-							  margin-right: 10%; /* Adds space between image and text */
-							  max-width: 45%; /* Optional: Adjust image size */
-							}
-
-						</style>
-						  
-						  <div class="image-text">
-							<img src="images/aboutMeHS.jpg" alt="Headshot">
-							<div>	
-							<p>
-								<b>Why Data Science?</b> When I was 8, I spent every Sunday night trying to answer the same question: 
-								"Why do the Chicago Bears always lose? Almost twenty years later I still can't answer that question - but at least adversity builds resiliance.. right?
-							</p>
-							<p>
-								In 2022, I graduated Magna Cum Laude from Loyola University Chicago and was
-								<a href="https://www.luc.edu/math/stories/ay21-22/archive/2022endofyear.shtml" target="_blank" rel="noopener noreferrer">awarded Departmental Honors</a> in Data Science. 
-								Despite the lockdown and academic instability, I perservered and spent my time taking on projects in R programming, 
-								DS consulting, and visualization across healthcare, and finance, and sports.
-							<p>
-								I currently work as a Sports Data Quality Assurance Specialist here in Chicago. 
-								Along with the operational aspect, I also help develop department foundations, 
-								workflow automations, and business reporting. In the last 3 months, I've spearheaded the development of
-								an end-to-end project to automate operational workflow by 60%. See the demo here on Github!
+						</header>
+						<div class="about">
+							<img class="about__photo" src="images/aboutMeHS.jpg" alt="Headshot of Aldrich Paras" width="1431" height="2012" loading="lazy">
+							<div class="about__text">
+								<p>
+									<b>Why data science?</b> When I was 8, I spent every Sunday night trying to answer the same question:
+									"Why do the Chicago Bears always lose?" Almost twenty years later I still can't answer that question, but at least adversity builds resilience... right?
 								</p>
 								<p>
-								In my free time, I love building custom keyboards, camping & fishing, playing guitar and piano, and thrifting! If you want to own your first custom keyboard,
-							connect with me <a href = "https://forms.gle/1fEVqW7qzcVc1g9p8" target="_blank" rel="noopener noreferrer">here!</a></p>
-								</div>
-						  </div>
+									In 2022, I graduated Magna Cum Laude from Loyola University Chicago and was
+									<a href="https://www.luc.edu/math/stories/ay21-22/archive/2022endofyear.shtml" target="_blank" rel="noopener noreferrer">awarded Departmental Honors</a> in Data Science.
+									Despite the lockdown and academic instability, I persevered and spent my time taking on projects in R, machine learning, and data science consulting.
+								</p>
+								<p>
+									I'm a Data Quality Analyst Team Lead at TxODDS in Chicago. I joined in 2024 in one of the first batches of hires at the new Chicago branch,
+									became its first quality assurance hire and built the QA function there, then built the automation platform that became Scores-DQ.
+									Today I own the Snowflake, dbt, and Airflow pipeline behind Scores-DQ, lead the team I built through a hiring process I designed,
+									and contribute to commercial data products for TxODDS's London data team. My work has spanned sports, healthcare receivables, and public health data.
+								</p>
+								<p>
+									In my free time, I love building custom keyboards, camping &amp; fishing, playing guitar and piano, and thrifting! If you want to own your first custom keyboard,
+									connect with me <a href="https://forms.gle/1fEVqW7qzcVc1g9p8" target="_blank" rel="noopener noreferrer">here!</a>
+								</p>
+							</div>
+						</div>
 						<footer>
 							<a href="#footer" class="button">Contact Me</a>
 						</footer>
-					
 					</section>
-				</div>
-
-			<!-- Features -->
-				<div class="wrapper style1">
-
-					<section id="Services" class="container special">
-						<header>
-							<h2>Let's Work Together!</h2>
-							<p>Here are a few services I provide. </p>
-						</header>
-						<div class="row">
-							<article class="col-4 col-12-mobile special">
-								<a href="javascript:openServiceForm('consulting')" class="image featured"><img src="images/Consulting.jpg" alt="" /></a>
-								<header>
-									<h3><a href="javascript:openServiceForm('consulting')"> End-to-End Data Science Consulting </a></h3>
-								</header>
-								<p>
-									I will help you navigate your organization's complex problems, streamline operational and technical processess, 
-									and make data-driven decisions tailored for your business needs.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="javascript:openServiceForm('automation')" class="image featured"><img src="images/automation.jpg" alt="" /></a>
-								<header>
-									<h3><a href="javascript:openServiceForm('automation')">Automation & App Development</a></h3>
-								</header>
-								<p>
-							 I will design and implement automated workflows, business reporting, 
-							and shiny applications to eliminate manual work, optimize operations, and empower your team with user-friendly solutions.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="javascript:openServiceForm('dashboard')" class="image featured"><img src="images/Dashboard.jpg" alt="" /></a>
-								<header>
-									<h3><a href="javascript:openServiceForm('dashboard')">Interactive Dashboards</a></h3>
-								</header>
-								<p>
-								I will leverage your raw data for future decisions by creating sleek, interactive dashboards, making insights accessible and 
-								actionable for all stakeholders.
-								</p>
-							</article>
-						</div>
-					</section>
-
 				</div>
 
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
-						
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>Connect with Me!</h3>
-										</header>
-										<ul class="icons">
-											<li><a href="https://www.facebook.com/aldrich.paras"  target="_blank" rel="noopener noreferrer" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="https://www.instagram.com/aldrichparas/"  target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="https://www.tiktok.com/@insightap"  target="_blank" rel="noopener noreferrer" class="icon brands fa-tiktok"><span class="label">Dribbble</span></a></li>
-											<li><a href="https://github.com/ajtparas"  target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li>
-											<li><a href="https://www.linkedin.com/in/aldrich-paras/"  target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
 
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer" >HTML5 UP</a></li>
-										</ul>
-									</div>
+						<!-- Contact -->
+							<section class="contact">
+								<header>
+									<h3>Connect with Me!</h3>
+								</header>
+								<ul class="icons">
+									<li><a href="https://www.facebook.com/aldrich.paras" target="_blank" rel="noopener noreferrer" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/aldrichparas/" target="_blank" rel="noopener noreferrer" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://www.tiktok.com/@insightap" target="_blank" rel="noopener noreferrer" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+									<li><a href="https://github.com/ajtparas" target="_blank" rel="noopener noreferrer" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/aldrich-paras/" target="_blank" rel="noopener noreferrer" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</section>
 
+						<!-- Copyright -->
+							<div class="copyright">
+								<ul class="menu">
+									<li>&copy; Aldrich Paras. All rights reserved.</li><li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
+								</ul>
 							</div>
 
-						</div>
 					</div>
 				</div>
 
@@ -594,154 +251,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-				// Service form functionality
-				function openServiceForm(serviceType) {
-					const modal = document.getElementById('serviceModal');
-					const modalTitle = document.getElementById('modalTitle');
-					const serviceSelect = document.getElementById('serviceType');
-					
-					// Set modal title and pre-select service
-					switch(serviceType) {
-						case 'consulting':
-							modalTitle.textContent = 'Data Science Consulting Inquiry';
-							serviceSelect.value = 'consulting';
-							break;
-						case 'automation':
-							modalTitle.textContent = 'Automation & App Development Inquiry';
-							serviceSelect.value = 'automation';
-							break;
-						case 'dashboard':
-							modalTitle.textContent = 'Interactive Dashboard Inquiry';
-							serviceSelect.value = 'dashboard';
-							break;
-						default:
-							modalTitle.textContent = 'Service Inquiry';
-					}
-					
-					modal.style.display = 'block';
-					document.body.style.overflow = 'hidden'; // Prevent background scrolling
-				}
-
-				function closeServiceForm() {
-					const modal = document.getElementById('serviceModal');
-					modal.style.display = 'none';
-					document.body.style.overflow = 'auto'; // Restore scrolling
-					
-					// Reset form
-					document.getElementById('contactForm').reset();
-				}
-
-				function submitForm() {
-					const form = document.getElementById('contactForm');
-					const formData = new FormData(form);
-					
-					// Validate required fields
-					const requiredFields = ['clientName', 'clientEmail', 'serviceType', 'projectDescription'];
-					let isValid = true;
-					
-					requiredFields.forEach(field => {
-						const element = document.getElementById(field);
-						if (!element.value.trim()) {
-							element.style.borderColor = '#ef8376';
-							isValid = false;
-						} else {
-							element.style.borderColor = '#e5e5e5';
-						}
-					});
-					
-					if (!isValid) {
-						alert('Please fill in all required fields.');
-						return false;
-					}
-
-					// Create email content
-					let emailSubject = `Service Inquiry: ${formData.get('serviceType')} - ${formData.get('clientName')}`;
-					let emailBody = `
-					New Service Inquiry from ${formData.get('clientName')}
-
-					Contact Information:
-					Name: ${formData.get('clientName')}
-					Email: ${formData.get('clientEmail')}
-					Company: ${formData.get('company') || 'Not specified'}
-
-					Project Details:
-					Service: ${formData.get('serviceType')}
-					Timeline: ${formData.get('projectTimeline') || 'Not specified'}
-					Budget: ${formData.get('budget') || 'Not specified'}
-
-					Project Description:
-					${formData.get('projectDescription')}
-
-					Additional Notes:
-					${formData.get('additionalNotes') || 'None'}
-
-					---
-					This inquiry was submitted through your portfolio website.
-					`;
-
-					// Create mailto link (fallback method)
-					const mailtoLink = `mailto:ajtparas@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-					
-					// Try to open email client
-					window.location.href = mailtoLink;
-					
-					// Show success message and close modal
-					setTimeout(() => {
-						alert('Thank you for your inquiry! Your email client should open with the message pre-filled. If it doesn\'t open automatically, please copy the information and send it to: aldrichparas@example.com');
-						closeServiceForm();
-					}, 1000);
-					
-					return false; // Prevent form submission
-				}
-
-				// Close modal when clicking outside of it
-				window.onclick = function(event) {
-					const modal = document.getElementById('serviceModal');
-					if (event.target === modal) {
-						closeServiceForm();
-					}
-				}
-
-				// Close modal with Escape key
-				document.addEventListener('keydown', function(event) {
-					if (event.key === 'Escape') {
-						closeServiceForm();
-					}
-				});
-			</script>
-
-	<!-- Service Inquiry Modal -->
-		<div id="serviceModal" class="modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.6);">
-		<div style="background:#fff; margin:5% auto; padding:20px; border-radius:8px; width:90%; max-width:600px; position:relative;">
-			<span onclick="closeServiceForm()" style="position:absolute; top:10px; right:15px; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
-			<h2 id="modalTitle">Service Inquiry</h2>
-			<form id="contactForm" onsubmit="return submitForm()">
-			<label for="clientName">Name*</label>
-			<input type="text" id="clientName" name="clientName" required style="width:100%; margin-bottom:10px;"><br>
-
-			<label for="clientEmail">Email*</label>
-			<input type="email" id="clientEmail" name="clientEmail" required style="width:100%; margin-bottom:10px;"><br>
-
-
-			<label for="serviceType">Service*</label>
-			<select id="serviceType" name="serviceType" required style="width:100%; margin-bottom:10px;">
-				<option value="">Select a service</option>
-				<option value="consulting">Data Science Consulting</option>
-				<option value="automation">Automation & App Development</option>
-				<option value="dashboard">Interactive Dashboards</option>
-			</select><br>
-
-			<label for="Description">Project Description*</label>
-			<textarea id="projectDescription" name="projectDescription" rows="4" required style="width:100%; margin-bottom:10px;"></textarea><br>
-
-			<label for="additionalNotes">Additional Notes</label>
-			<textarea id="additionalNotes" name="additionalNotes" rows="2" style="width:100%; margin-bottom:10px;"></textarea><br>
-
-			<button type="submit" style="padding:10px 20px;">Send Inquiry</button>
-			</form>
-		</div>
-		</div>		
+			<script src="assets/js/site.js"></script>
 	</body>
 </html>
